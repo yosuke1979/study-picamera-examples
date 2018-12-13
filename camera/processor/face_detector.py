@@ -9,7 +9,7 @@ class FaceDetector(object):
     def __init__(self, flip = True):
         self.vs = PiVideoStream(resolution=(800, 608)).start()
         self.flip = flip
-        time.sleep(2.0)
+        time.sleep(2.0
 
         # opencvの顔分類器(CascadeClassifier)をインスタンス化する
         self.face_cascade = cv2.CascadeClassifier('camera/processor/model/haarcascades/haarcascade_frontalface_default.xml')
@@ -39,7 +39,7 @@ class FaceDetector(object):
         # 取得した座標情報を元に、cv2.rectangleを使ってframe上に
         # 顔の位置を描画する
         for (x,y,w,h) in faces:
-            cv2.text(frame,str,len(faces),(100,100))
+            cv2.Text(frame,str,len(faces),(100,100))
             cv2.rectangle(frame,(x,y),(x+w,y+h),(255,255,255),2)
 
         # frameを戻り値として返す
